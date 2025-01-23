@@ -85,7 +85,8 @@ Differentiating $V(x)$ with respect to $x$:
 \end{align}
 Using gradient ascent, we start with an initial guess $x_0$ (where $0 < x_0 < 9$) and a step size $\alpha > 0$. The update rule is:
 \begin{align}
-x_{n+1} = x_n + \alpha \frac{dV}{dx}\bigg|_{x = x_n}
+x_{n+1} = x_n + \alpha \frac{dV}{dx}\bigg|_{x = x_n} \\
+\implies x_{n+1} = x_n + \alpha \brak{324 - 144x + 12x^2}
 \end{align}
 Ensure that $x$ remains within the bounds $0 < x < 9$ (as required for the given question). \\
 The process stops when the change in $x$ between iterations is sufficiently small:
