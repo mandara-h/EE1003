@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{\textbf{Scientific Calculator Using AVR-GCC}}
+\author{Mandara Hosur \\EE24BTECH11040}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report presents the design and implementation of a scientific calculator using an Arduino Uno, a JHD162A LCD display, 23 input buttons, and other supporting components. The calculator is programmed using AVR-GCC on Termux (Debian) and supports various mathematical functions within the constraints of 23 push buttons. The report covers the circuit design, software implementation, and testing results.
+\end{abstract}
+
+\section{Introduction}
+A scientific calculator is an essential tool for engineers and students, capable of performing complex mathematical operations. This project aims to develop a scientific calculator using an embedded system, specifically the Arduino Uno, programmed with AVR-GCC.
+
+\section{Hardware Components}
+\begin{itemize}
+    \item Arduino Uno
+    \item JHD162A LCD display
+    \item 23 push buttons
+    \item 1k$\Omega$, 2k$\Omega$, 1.5k$\Omega$, 15k$\Omega$,  resistors
+    \item Jumper wires and conducting wires
+    \item Breadboard
+\end{itemize}
+
+\section{Circuit Design}
+\begin{enumerate}
+    \item Connect 5V and Ground from the Arduino onto the breadboard.
+    \item Connect the push buttons in 2 rows (each from grid to power lines not connected to Ground or 5V). The first row must have 10 buttons (for digits), and the second row must have 13 buttons (for functions). Connect one terminal of each button to Ground.
+    \item Make the following connections to establish the required circuit:
+    \input{tables/connections}
+\end{enumerate}
+\textit{\textbf{Remark:} Connections designed with the help of Akshara EE24BTECH11003, Akshita EE24BTECH11054}
+
+\section{Software Implementation}
+The software is written in embedded C using AVR-GCC and compiled in Termux. The main features include:
+\begin{itemize}
+    \item Basic arithmetic operations (addition, subtraction, multiplication, division)
+    \item Trigonometric functions (sin, cos, tan)
+    \item Logarithmic and exponential functions
+    \item Factorial and power functions
+    \item Keypad scanning and input processing
+\end{itemize}
+
+\subsection{AVR Code}
+The code follows a structured approach:
+\begin{itemize}
+    \item Initialization of LCD and keypad
+    \item Interrupt-based button handling
+    \item Mathematical function execution
+    \item Displaying results on the LCD
+\end{itemize}
+
+Code can be found at the following \href{hyperlink}{}
+
+\textit{\textbf{Remark:} Code sourced from Akshara EE24BTECH11003, Akhila EE24BTECH11055, Rasagna EE24BTECH11023, Spoorthi EE24BTECH11065, Akshita EE24BTECH11054}
+
+\subsection{Push Button Designations}
+\input{tables/functions}
+
+\section{Results}
+The calculator was tested for accuracy and response time. The output was verified against standard scientific calculators, and the results showed a minimal error margin. The system successfully handled all planned operations within the given hardware constraints.
+
+\section{Conclusion}
+This project successfully demonstrates the implementation of a scientific calculator using AVR-GCC and embedded C. It provides accurate calculations while maintaining a simple user interface.
+
+\end{document}
